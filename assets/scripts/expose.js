@@ -34,7 +34,7 @@ function init() {
   hornSelect.addEventListener('change', function () {
     const selected = hornSelect.value;
 
-    hornImage.src = `assets/images/${selected}.png`;
+    hornImage.src = `assets/images/${selected}.svg`;
     hornImage.alt = selected;
 
     audioElement.src = `assets/audio/${selected}.mp3`;
