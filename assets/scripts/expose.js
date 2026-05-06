@@ -12,15 +12,8 @@ function init() {
 
   const jsConfetti = new JSConfetti();
 
-  hornSelect.addEventListener('change', function () {
-    const selected = hornSelect.value;
-    hornImage.src = `assets/images/${selected}.png`;
-    hornImage.alt = selected;
-    audioElement.src = `assets/audio/${selected}.mp3`;
-  });
-
-  volumeSlider.addEventListener('input', function () {
-    const vol = parseInt(volumeSlider.value);
+  function updateVolume() {
+    const vol = Number(volumeSlider.value);
     audioElement.volume = vol / 100;
 
     if (vol === 0) {
@@ -36,10 +29,22 @@ function init() {
       volumeIcon.src = 'assets/icons/volume-level-3.svg';
       volumeIcon.alt = 'Volume level 3';
     }
+  }
+
+  hornSelect.addEventListener('change', function () {
+    const selected = hornSelect.value;
+
+    hornImage.src = `assets/images/${selected}.png`;
+    hornImage.alt = selected;
+
+    audioElement.src = `assets/audio/${selected}.mp3`;
   });
+
+  volumeSlider.addEventListener('input', updateVolume);
 
   playButton.addEventListener('click', function () {
     if (hornSelect.value === 'select') return;
+
     audioElement.pause();
     audioElement.currentTime = 0;
     audioElement.play();
@@ -48,4 +53,6 @@ function init() {
       jsConfetti.addConfetti();
     }
   });
+
+  updateVolume();
 }
