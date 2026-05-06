@@ -10,6 +10,6 @@ Make sure you make a PR to your own repo's main and not the class' repo!! Otherw
  2. Yes, I would use a unit test for the max message length feature since it is a small part of functionality. A unit test can easily verify whether messages under 80 characters are accepted and messages over 80 characters are rejected.
 
 # GitHub Links
-Expose Page: https://lukemdeverian.github.io/YOUR_REPO_NAME/expose.html
+Expose Page: https://lukemdeverian.github.io/Lab5_Starter/expose.html
 
- Explore Page: https://lukemdeverian.github.io/YOUR_REPO_NAME/explore.html
+ Explore Page: https://lukemdeverian.github.io/Lab5_Starter/explore.html
